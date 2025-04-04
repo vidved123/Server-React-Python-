@@ -1,1 +1,8 @@
 .venv/
+.DS_Store
+.vscode/
+*.zip
+instance/
+project/
+Server copy*/
+Login Form copy/
