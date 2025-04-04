@@ -1,0 +1,159 @@
+/* General Styling */
+body {
+    font-family: Segoe UI, Arial, Helvetica, Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f6f9fc;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Headings */
+h1 {
+    color: #007bff;
+    font-size: 2.5rem;
+    /* Fixed: Used rem for better responsiveness */
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Main Container */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Paragraph */
+p {
+    font-size: 1.25rem;
+    /* Fixed: Used rem */
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Buttons */
+a {
+    display: inline-block;
+    /* Ensures button styling works properly */
+    margin: 10px;
+    padding: 12px 20px;
+    font-size: 1.125rem;
+    /* Fixed: Used rem */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    /* Fixed: Corrected transition syntax */
+    width: 200px;
+    text-align: center;
+}
+
+a:hover {
+    transform: translateY(-2px);
+}
+
+/* Button Styles */
+.logout-button {
+    background-color: #f44336;
+}
+
+.logout-button:hover {
+    background-color: #d32f2f;
+}
+
+.dashboard-buttons {
+    background-color: red;
+}
+
+.dashboard-buttons:hover {
+    background-color: darkred;
+}
+
+.profile-button {
+    background-color: darkgoldenrod;
+}
+
+.profile-button:hover {
+    background-color: navy;
+}
+
+.library_home-button {
+    background-color: orange;
+}
+
+.library_home-button:hover {
+    background-color: darkorange;
+}
+
+.admin-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.admin-button:hover {
+    background-color: #0056b3;
+}
+
+/* Borrowed Books List */
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+    /* Fixed: Corrected transition syntax */
+}
+
+ul li:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        /* Fixed: Used rem */
+    }
+
+    p {
+        font-size: 1.125rem;
+        /* Fixed: Used rem */
+    }
+
+    a {
+        font-size: 1rem;
+        /* Fixed: Used rem */
+        padding: 10px 15px;
+    }
+}

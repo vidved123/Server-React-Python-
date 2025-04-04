@@ -1,0 +1,101 @@
+/* 🎨 General Styling */
+.delete-books-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* 🏷️ Title */
+.delete-books-container h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* 🔔 Message Styling */
+.message {
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.message.success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+/* 📚 Book List */
+.book-list {
+    list-style-type: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* 📖 Individual Book */
+.book-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.book-list li:last-child {
+    border-bottom: none;
+}
+
+.book-list input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* 🗑️ Delete Button */
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+.delete-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+    .delete-books-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .book-list {
+        max-height: 250px;
+    }
+}

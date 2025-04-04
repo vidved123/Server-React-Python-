@@ -1,0 +1,128 @@
+/* General Styles */
+body {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Book List Container */
+.book-list-container {
+    background-color: #fff;
+    padding: 20px;
+    margin: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* Book List */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+li:hover {
+    transform: translateY(-5px);
+}
+
+li span {
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Borrow Button */
+a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #007bff;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+/* Message Styling */
+p {
+    color: #ff4c4c;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Back Button */
+.back-button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    border: none;
+    background: #28a745;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.back-button:hover {
+    background: #1e7e34;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .book-list-container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    li {
+        padding: 15px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    a {
+        padding: 8px 16px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}

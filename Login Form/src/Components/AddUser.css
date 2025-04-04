@@ -1,0 +1,125 @@
+body {
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+    max-width: 50%;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+input[type="text"],
+input[type=password],
+input[type="email"],
+input[type="telephone"] {
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    padding: 14px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);
+}
+
+.message {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.danger {
+    background-color: #f8e7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.back-btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-btn a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #28a745;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.back-btn a:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+
+    }
+}
