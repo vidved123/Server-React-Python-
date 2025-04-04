@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY,
+    username TEXT(25) UNIQUE NOT NULL,
+    password TEXT(25) NOT NULL
+);
+
