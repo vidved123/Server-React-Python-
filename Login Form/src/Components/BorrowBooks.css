@@ -1,0 +1,133 @@
+/* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-y: auto;
+}
+
+/* Header Styling */
+h2 {
+    text-align: center;
+    color: #004085;
+    padding: 20px 0;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #007bff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Container */
+.borrow-books-container {
+    padding: 2rem;
+    max-width: 1100px;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Input Fields */
+.search-input,
+.admin-user-input {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 1rem 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus,
+.admin-user-input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Buttons */
+.validate-user-button,
+.borrow-button,
+.back-button {
+    padding: 10px 24px;
+    font-size: 16px;
+    margin: 10px 10px 20px 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.validate-user-button:hover,
+.borrow-button:hover,
+.back-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.validate-user-button:disabled,
+.borrow-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Error Styling */
+.error-message {
+    color: #dc3545;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+/* Table Container */
+.table-container {
+    overflow-x: auto;
+    max-height: 500px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Table Styling */
+.book-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+    background-color: white;
+}
+
+.book-table th,
+.book-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e2e2e2;
+    vertical-align: middle;
+}
+
+.book-table th {
+    background-color: #f0f4f8;
+    font-weight: 600;
+    color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Checkbox Styling */
+.book-table input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Book Image */
+.table-book-image {
+    width: 55px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,203 @@
+/* 🌐 General Page Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* 🧩 Scoped Container for Delete User Page */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* 🏷️ Header Styling */
+h1 {
+    color: #333;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* 🔔 Message Box Styles */
+.message {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+}
+
+.danger {
+    background-color: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+}
+
+/* 📊 Scoped Table Styles */
+.delete-user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    overflow-x: auto;
+    display: block;
+}
+
+.delete-user-table th,
+.delete-user-table td {
+    padding: 18px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.delete-user-table th {
+    background-color: #343a40;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.delete-user-table td {
+    font-size: 16px;
+    color: #555;
+    word-break: break-word;
+}
+
+.delete-user-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.delete-user-table tr:hover {
+    background-color: #f1f3f5;
+    transition: background-color 0.3s ease;
+}
+
+/* 🗑️ Scoped Delete Button */
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+.delete-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ⬅️ Scoped Back Button */
+.back-button {
+    margin-top: 30px;
+}
+
+.back-button a {
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button a:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 30px;
+    }
+
+    .delete-user-table th,
+    .delete-user-table td {
+        font-size: 15px;
+        padding: 14px 12px;
+    }
+
+    .delete-button,
+    .back-button a {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .delete-user-table th,
+    .delete-user-table td {
+        font-size: 14px;
+        padding: 12px 10px;
+    }
+
+    .delete-button {
+        padding: 9px 16px;
+        font-size: 13px;
+    }
+
+    .back-button a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 30px auto;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .delete-user-table th,
+    .delete-user-table td {
+        font-size: 13px;
+        padding: 10px 8px;
+    }
+
+    .delete-button {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    .back-button a {
+        padding: 8px 18px;
+        font-size: 13px;
+    }
+}

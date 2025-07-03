@@ -1,0 +1,175 @@
+/* === General Styles === */
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* === Book List Container === */
+.book-list-container {
+    background-color: #fff;
+    padding: 30px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    max-width: 900px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* === Page Heading === */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 700;
+}
+
+/* === Book List === */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* === Book Item === */
+li {
+    background-color: #fff;
+    padding: 20px 25px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease;
+    flex-wrap: wrap;
+}
+
+li:hover {
+    transform: translateY(-5px);
+}
+
+/* === Book Title === */
+li span {
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+    flex: 1 1 60%;
+}
+
+/* === Borrow Button === */
+a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #007bff;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+/* === Messages (if shown) === */
+p {
+    color: #ff4c4c;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* === Back Button (Optional) === */
+.back-button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    border: none;
+    background: #28a745;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.back-button:hover {
+    background: #1e7e34;
+}
+
+/* === Responsive: Tablets (≤992px) === */
+@media (max-width: 992px) {
+    .book-list-container {
+        padding: 25px;
+        margin: 30px;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    li span {
+        width: 100%;
+        font-size: 17px;
+    }
+
+    a {
+        width: 100%;
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+/* === Responsive: Phones (≤600px) === */
+@media (max-width: 600px) {
+    .book-list-container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    li {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    a {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    li span {
+        font-size: 16px;
+    }
+}
+
+/* === Responsive: Large Screens (≥1400px) === */
+@media (min-width: 1400px) {
+    .book-list-container {
+        max-width: 1100px;
+        padding: 40px;
+    }
+
+    li span {
+        font-size: 20px;
+    }
+
+    a {
+        font-size: 17px;
+    }
+}

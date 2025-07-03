@@ -1,0 +1,124 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding: 40px;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+  border-bottom: 3px solid #007bff;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/* Two-column form layout with vertical spacing */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 60px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+input,
+select {
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+}
+
+/* Make each group take full column width */
+form .form-group:nth-of-type(odd) {
+  grid-column: 1;
+}
+form .form-group:nth-of-type(even) {
+  grid-column: 2;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  grid-column: span 2;
+  background-color: #007bff;
+  color: #fff;
+  padding: 16px;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Message */
+.message.success {
+  color: green;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.message.danger {
+  color: red;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Back Button */
+.back-btn {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.back-btn button {
+  background-color: #28a745;
+  color: #fff;
+  padding: 14px 28px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Responsive layout: stack fields */
+@media (max-width: 768px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  form .form-group {
+    grid-column: 1 !important;
+  }
+
+  button[type="submit"] {
+    grid-column: 1;
+  }
+}
