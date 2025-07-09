@@ -6,18 +6,28 @@ import "./AddBooks.css";
 export default function AddBooks() {
     const navigate = useNavigate();
     const [file, setFile] = useState(null);
+    const [manualBook, setManualBook] = useState({
+        title: "",
+        author: "",
+        total_copies: "",
+        image: null,
+    });
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
 
-    const handleFileChange = (event) => {
-        setFile(event.target.files[0]);
+    const handleFileChange = (event) => setFile(event.target.files[0]);
+
+    const handleManualChange = (e) => {
+        const { name, value, files } = e.target;
+        if (name === "image") {
+            setManualBook({ ...manualBook, image: files[0] });
+        } else {
+            setManualBook({ ...manualBook, [name]: value });
+        }
     };
 
-    const handleUpload = async () => {
-        if (!file) {
-            alert("⚠️ Please select a file first!"); // Alert if no file is selected
-            return;
-        }
+    const handleUploadExcel = async () => {
+        if (!file) return alert("⚠️ Please select an Excel file!");
 
         setLoading(true);
         const formData = new FormData();
@@ -27,22 +37,46 @@ export default function AddBooks() {
             const token = localStorage.getItem("token");
             const response = await axios.post("http://127.0.0.1:8080/add_books", formData, {
                 headers: {
-                    "Content-Type": "multipart/form-data",
                     "Authorization": `Bearer ${token}`,
                 },
                 withCredentials: true,
             });
 
-            setMessage(response.data.message || "✅ Books added successfully!"); // Display success message
+            setMessage(response.data.message || "✅ Books added from Excel!");
         } catch (error) {
-            console.error("❌ Error uploading file:", error);
+            console.error(error);
+            setMessage(error.response?.data?.error || "❌ Upload failed.");
+        } finally {
+            setLoading(false);
+        }
+    };
 
-            if (error.response) {
-                console.error("❌ Server Response:", error.response.data);
-                setMessage(`❌ ${error.response.data.error || "Error uploading file. Try again."}`); // Display error message from server
-            } else {
-                setMessage("❌ Error connecting to server."); // Display and error message if no response from server
-            }
+    const handleUploadManual = async () => {
+        const { title, author, total_copies, image } = manualBook;
+        if (!title || !author || !total_copies || !image) {
+            return alert("⚠️ Please fill out all fields and select an image.");
+        }
+
+        setLoading(true);
+        const formData = new FormData();
+        formData.append("title", title);
+        formData.append("author", author);
+        formData.append("total_copies", total_copies);
+        formData.append("image", image);
+
+        try {
+            const token = localStorage.getItem("token");
+            const response = await axios.post("http://127.0.0.1:8080/add_books", formData, {
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                },
+                withCredentials: true,
+            });
+
+            setMessage(response.data.message || "✅ Book added manually!");
+        } catch (error) {
+            console.error(error);
+            setMessage(error.response?.data?.error || "❌ Failed to add book.");
         } finally {
             setLoading(false);
         }
@@ -50,18 +84,54 @@ export default function AddBooks() {
 
     return (
         <div className="add-books-container">
-            <h2>📖 Add Books</h2>
+            <h2>📘 Add Books</h2>
             {message && <p className="message">{message}</p>}
 
+            <h3>📥 Upload Excel</h3>
             <input type="file" accept=".xlsx, .xls" onChange={handleFileChange} />
             {file && <p>📂 Selected: {file.name}</p>}
-
-            <button onClick={handleUpload} className="upload-button" disabled={loading}>
+            <button onClick={handleUploadExcel} className="upload-button" disabled={loading}>
                 {loading ? "Uploading..." : "Upload Excel"}
             </button>
 
-            <button onClick={() => navigate("/library")} className="back-button">
-                Back To Library
+            <hr style={{ margin: "30px 0" }} />
+
+            <h3>✍️ Add Book Manually</h3>
+            <input
+                type="text"
+                name="title"
+                placeholder="Book Title"
+                value={manualBook.title}
+                onChange={handleManualChange}
+            />
+            <input
+                type="text"
+                name="author"
+                placeholder="Author"
+                value={manualBook.author}
+                onChange={handleManualChange}
+            />
+            <input
+                type="number"
+                name="total_copies"
+                placeholder="Total Copies"
+                value={manualBook.total_copies}
+                onChange={handleManualChange}
+            />
+            <input
+                type="file"
+                name="image"
+                accept="image/*"
+                onChange={handleManualChange}
+            />
+            {manualBook.image && <p>🖼️ Selected: {manualBook.image.name}</p>}
+
+            <button onClick={handleUploadManual} className="upload-button" disabled={loading}>
+                {loading ? "Adding..." : "Add Book"}
+            </button>
+
+            <button onClick={() => navigate("/library")} className="back-link">
+                Back to Library
             </button>
         </div>
     );
