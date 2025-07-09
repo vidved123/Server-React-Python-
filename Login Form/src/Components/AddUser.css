@@ -1,124 +1,169 @@
-/* Reset */
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: Arial, sans-serif;
   background-color: #f8f9fa;
-  min-height: 100vh;
-  padding: 40px;
-  overflow-x: hidden;
+  height: 100%;
+  overflow: hidden;
 }
 
+/* Center the form in the viewport */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#root {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container for the form */
 .container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px;
   background-color: #fff;
+  padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
 
+/* Custom scrollbar for WebKit */
+.container::-webkit-scrollbar {
+  width: 6px;
+}
+.container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+/* Heading */
 h1 {
-  font-size: 36px;
-  margin-bottom: 30px;
+  font-size: 28px;
+  margin-bottom: 20px;
   color: #333;
-  border-bottom: 3px solid #007bff;
-  padding-bottom: 10px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 8px;
   text-align: center;
 }
 
-/* Two-column form layout with vertical spacing */
-form {
+/* Form layout grid */
+form.form-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px 60px;
+  gap: 20px 40px;
 }
 
+/* Form field row: label + input inline */
 .form-group {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
+  align-items: center;
+  gap: 12px;
 }
 
-label {
+/* Labels */
+.form-group label {
+  min-width: 120px;
   font-weight: bold;
-  font-size: 16px;
-  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
 }
 
-input,
-select {
-  padding: 14px;
-  font-size: 16px;
+/* Inputs and selects */
+.form-group input,
+.form-group select {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 6px;
   width: 100%;
 }
 
-/* Make each group take full column width */
-form .form-group:nth-of-type(odd) {
-  grid-column: 1;
-}
-form .form-group:nth-of-type(even) {
-  grid-column: 2;
+/* Full width elements like buttons/selects */
+.full-width {
+  grid-column: span 2;
 }
 
-/* Submit Button */
+/* Submit button */
 button[type="submit"] {
-  grid-column: span 2;
   background-color: #007bff;
   color: #fff;
-  padding: 16px;
-  font-size: 18px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-/* Message */
-.message.success {
-  color: green;
-  margin-bottom: 20px;
-  text-align: center;
-}
-.message.danger {
-  color: red;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* Back Button */
-.back-btn {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.back-btn button {
-  background-color: #28a745;
-  color: #fff;
-  padding: 14px 28px;
+  padding: 14px;
   font-size: 16px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
 
-/* Responsive layout: stack fields */
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Back button */
+.back-btn {
+  grid-column: span 2;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.back-btn button {
+  background-color: #28a745;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Messages */
+.message.success {
+  color: green;
+  grid-column: span 2;
+  text-align: center;
+}
+.message.danger {
+  color: red;
+  grid-column: span 2;
+  text-align: center;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-  form {
+  form.form-layout {
     grid-template-columns: 1fr;
   }
 
-  form .form-group {
-    grid-column: 1 !important;
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  button[type="submit"] {
+  .form-group label {
+    min-width: auto;
+    margin-bottom: 6px;
+  }
+
+  .full-width {
+    grid-column: 1;
+  }
+
+  .back-btn {
     grid-column: 1;
   }
 }
