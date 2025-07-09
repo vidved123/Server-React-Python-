@@ -1,37 +1,62 @@
 /* Global Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #e0e7ef 0%, #f4f6fa 100%);
     margin: 0;
-    padding: 40px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 0;
     min-height: 100vh;
+    color: #23272f;
+    overflow-y: auto;
+    overflow-x: hidden;
     box-sizing: border-box;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* Headings */
 h2 {
-    color: #007bff;
-    font-size: clamp(20px, 2.5vw, 28px);
-    margin-bottom: 20px;
+    color: #2563eb;
+    font-size: 2.2rem;
+    margin-bottom: 24px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(96, 165, 250, 0.10);
 }
 
 /* Main container */
 .add-books-container {
-    width: 100%;
-    max-width: 500px;
-    min-width: 300px;
-    padding: 20px;
-    margin: 20px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    max-width: 400px;
+    min-width: 0;
+    padding: 2.2rem 1.2rem;
+    margin: 32px auto;
+    background: rgba(255,255,255,0.85);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(96, 165, 250, 0.18), 0 1.5px 8px rgba(96, 165, 250, 0.10);
     text-align: center;
+    border: 2.5px solid;
+    border-image: linear-gradient(120deg, #60a5fa 0%, #2563eb 100%) 1;
+    backdrop-filter: blur(10px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 80vh;
+    box-sizing: border-box;
+    max-height: 90vh;
+    box-shadow: 0 8px 32px 0 rgba(96, 165, 250, 0.18), 0 1.5px 8px rgba(96, 165, 250, 0.10),
+                0 0 0 1.5px rgba(96, 165, 250, 0.10) inset;
+    /* Custom scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #60a5fa #e0e7ef;
+}
+
+/* Custom scrollbar for Webkit browsers */
+.add-books-container::-webkit-scrollbar {
+    width: 8px;
+    background: #e0e7ef;
+    border-radius: 8px;
+}
+.add-books-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(120deg, #60a5fa 0%, #2563eb 100%);
+    border-radius: 8px;
 }
 
 /* Input fields */
@@ -39,54 +64,83 @@ input[type="text"],
 input[type="number"],
 input[type="file"] {
     width: 100%;
-    padding: 10px;
-    margin: 15px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 18px 0;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
     box-sizing: border-box;
+    background: #f4f6fa;
+    color: #23272f;
+    font-size: 1.08rem;
+    font-family: inherit;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 input[type="file"] {
-    background-color: #f8f9fa;
+    background-color: #e9eff6;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="file"]:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px #60a5fa44;
+    background: #e0e7ef;
 }
 
 /* Button Styling */
 .upload-button,
-.back-link {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
+.back-link,
+.manual-submit-button {
+    background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+    color: #fff;
+    padding: 16px 0;
     border: none;
-    border-radius: 6px;
+    border-radius: 12px;
     cursor: pointer;
-    margin: 10px;
+    margin: 14px 0;
     width: 100%;
-    transition: background 0.3s;
-}
-
-.upload-button:hover {
-    background-color: #0056b3;
-}
-
-.back-link {
-    background-color: #6c757d;
-    display: inline-block;
+    font-size: 1.12rem;
+    font-weight: 800;
+    box-shadow: 0 2px 12px rgba(96, 165, 250, 0.08);
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.5px;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
-    padding: 14px;
-    border-radius: 8px;
-    margin-top: 25px;
+    display: block;
+}
+
+.upload-button:hover,
+.manual-submit-button:hover {
+    background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(96, 165, 250, 0.13);
+}
+
+.back-link {
+    background: linear-gradient(90deg, #64748b 0%, #94a3b8 100%);
+    font-size: 1.08rem;
+    font-weight: 700;
+    border-radius: 10px;
+    margin-top: 28px;
+    padding: 16px 0;
 }
 
 .back-link:hover {
-    background-color: #5a6268;
+    background: linear-gradient(90deg, #334155 0%, #64748b 100%);
 }
 
 /* Flash messages */
 .flash-messages {
-    margin-top: 20px;
-    padding: 15px;
+    margin-top: 24px;
+    padding: 18px;
+    border-radius: 12px;
+    background: rgba(244, 246, 250, 0.85);
+    color: #2563eb;
+    border: 1.5px solid #e0e7ef;
+    box-shadow: 0 2px 8px rgba(96, 165, 250, 0.08);
+    font-weight: 800;
+    font-size: 1.08rem;
 }
 
 .flash-messages ul {
@@ -96,47 +150,97 @@ input[type="file"] {
 
 .flash-messages li {
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 10px;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 1.08rem;
     text-align: center;
 }
 
 .flash-messages li.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+    background-color: #fef2f2;
+    color: #b91c1c;
+    border: 1.5px solid #fecaca;
 }
 
 .flash-messages li.success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+    background-color: #e6f9f0;
+    color: #0f5132;
+    border: 1.5px solid #b6f0d3;
+}
+
+/* -------- Manual Form Styles -------- */
+.manual-form {
+    margin-top: 36px;
+    text-align: left;
+}
+
+.manual-form label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 20px;
+    color: #23272f;
+    font-size: 1.08rem;
+}
+
+.manual-submit-button {
+    margin-top: 24px;
+}
+
+/* Divider between Excel and Manual Form */
+.divider {
+    margin: 36px 0;
+    text-align: center;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    display: inline-block;
+    width: 40%;
+    height: 1.5px;
+    background: #cbd5e1;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.divider span {
+    color: #64748b;
+    font-weight: bold;
+    font-size: 1.08rem;
 }
 
 /* Responsive for tablets */
 @media (max-width: 992px) {
     .add-books-container {
         max-width: 600px;
-        padding: 25px;
+        padding: 2.2rem 1.2rem;
     }
-
     h2 {
-        font-size: 22px;
+        font-size: 1.5rem;
     }
 }
 
 /* Responsive for mobile phones */
 @media (max-width: 600px) {
     .add-books-container {
-        width: 90%;
-        padding: 30px;
+        width: 100vw;
+        max-width: 100vw;
+        min-width: 0;
+        padding: 1.2rem 0.5rem;
+        margin: 18px auto;
+        box-sizing: border-box;
+        max-height: 95vh;
     }
-
     .upload-button,
-    .back-link {
-        padding: 12px;
-        font-size: 16px;
+    .back-link,
+    .manual-submit-button {
+        padding: 14px 0;
+        font-size: 1rem;
+    }
+    .manual-form label {
+        font-size: 0.98rem;
     }
 }
 
@@ -144,10 +248,9 @@ input[type="file"] {
 @media (min-width: 1200px) {
     .add-books-container {
         max-width: 700px;
-        padding: 40px;
+        padding: 3rem 2rem;
     }
-
     h2 {
-        font-size: 28px;
+        font-size: 2.5rem;
     }
 }
